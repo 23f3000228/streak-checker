@@ -18,3 +18,4 @@ def longest_positive_streak(nums: list[int]) -> int:
             current_streak = 0
     max_streak = max(max_streak, current_streak)
     return max_streak
+#Returns the max streak
