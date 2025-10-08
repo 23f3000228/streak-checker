@@ -1,6 +1,10 @@
 name: Python tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main, add-streak-script-and-tests, streak-final-fix-1 ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
   build:
