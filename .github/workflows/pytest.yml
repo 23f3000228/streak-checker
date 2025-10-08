@@ -1,6 +1,10 @@
 name: Python tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ main, add-streak-script-and-tests, streak-final-fix-1 ]
+  pull_request:
+    branches: [ main, add-streak-script-and-tests, streak-final-fix-1 ]
 
 jobs:
   build:
@@ -14,10 +18,9 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install pytest
-    - name: Test with pytest
-      run: |
-        python -m pytest
+    - name: Install pytest
+      run: pip install --upgrade pip pytest
+    - name: Run tests
+      run: python -m pytest
+
+
